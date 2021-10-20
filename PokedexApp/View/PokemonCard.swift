@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct PokemonCard: View {
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
@@ -48,8 +48,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct PokemonCard_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        PokemonCard()
     }
 }
