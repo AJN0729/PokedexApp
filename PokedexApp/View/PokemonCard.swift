@@ -6,10 +6,21 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct PokemonCard: View {
     
     let pokemonData: PokemonData
+    let pokemonViewModel: PokemonViewModel
+    let backgroundColor: Color
+    
+    init(pokemonData: PokemonData, pokemonViewModel:
+         PokemonViewModel) {
+        self.pokemonData = pokemonData
+        self.pokemonViewModel = pokemonViewModel
+        self.backgroundColor =
+        Color(pokemonViewModel.detectBackgroundColor(forType: pokemonData.type))
+    }
     
     var body: some View {
         ZStack {
@@ -38,7 +49,7 @@ struct PokemonCard: View {
                         .frame(width: 100, height: 25)
                     
                     
-                    Image("1")
+                    KFImage(URL(string: pokemonData.imageUrl))
                         .resizable()
                         .scaledToFit()
                         .frame(width: 68, height: 68)
@@ -46,14 +57,14 @@ struct PokemonCard: View {
                 }
             }
         }
-        .background(Color.green)
+        .background(backgroundColor)
         .cornerRadius(12)
-        .shadow(color: .green, radius:  8, x: 0, y: 0)
+        .shadow(color: backgroundColor, radius:  8, x: 0, y: 0)
     }
 }
 
-struct PokemonCard_Previews: PreviewProvider {
-    static var previews: some View {
-        PokemonCard(pokemonData: mockData[0])
-    }
-}
+//struct PokemonCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PokemonCard(pokemonData: mockData[0])
+//    }
+//}

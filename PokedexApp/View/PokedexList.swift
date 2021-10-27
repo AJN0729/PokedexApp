@@ -18,7 +18,8 @@ struct PokedexList: View {
                 LazyVGrid(columns: gridItems, spacing: 20)
                     {
                         ForEach(viewModel.pokemon) { pokemon in
-                        PokemonCard(pokemonData: pokemon)
+                        PokemonCard(pokemonData: pokemon,
+                                    pokemonViewModel: viewModel)
                     }
                 }
             }
