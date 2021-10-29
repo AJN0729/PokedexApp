@@ -18,12 +18,17 @@ struct PokedexList: View {
                 LazyVGrid(columns: gridItems, spacing: 20)
                     {
                         ForEach(viewModel.pokemon) { pokemon in
-                        PokemonCard(pokemonData: pokemon,
-                                    pokemonViewModel: viewModel)
+                            
+                            NavigationLink(destination: PokemonDetails(pokemonData: pokemon, pokemonViewModel: viewModel)) {
+                                                        
+                                                        PokemonCard(pokemonData: pokemon, pokemonViewModel: viewModel)
+                            }
                     }
                 }
             }
             .navigationTitle("POKEDEX")
+            .background(Color.green)
+            .containerShape(shape: )
         }
     }
 }
