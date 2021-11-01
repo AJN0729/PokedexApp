@@ -27,8 +27,6 @@ struct PokedexList: View {
                 }
             }
             .navigationTitle("POKEDEX")
-            .background(Color.green)
-            .containerShape(shape: )
         }
     }
 }

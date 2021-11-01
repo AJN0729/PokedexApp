@@ -43,9 +43,9 @@ class PokemonViewModel: ObservableObject {
     func detectBackgroundColor(forType type: String) -> UIColor {
         switch type {
         case "fire": return .systemRed
-        case "water": return . systemBlue
+        case "water": return .blue
         case "poison": return .systemGreen
-        case "ellectric": return .systemYellow
+        case "electric": return .systemYellow
         case "psychic": return .systemPurple
         case "normal": return .systemGray
         case "ground": return .brown
